@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios Number e Math</title>
+</head>
+<body>
+    <script>
+        let num = prompt('Digite seu número');
+        num = Number(num);
+        document.body.innerHTML = `<h1>Seu número é ${num}</h1>`
+        document.body.innerHTML += `<p>A raíz quadrada é ${num ** 0.5}</p>`
+        document.body.innerHTML += `<p>O seu número ${num} é inteiro: ${Number.isInteger(num)}</p>`
+        document.body.innerHTML += `<p>O seu número ${num} é um NaN: ${Number.isNaN(num)}</p>`
+        document.body.innerHTML += `<p>O seu número arredondado para baixo é ${Math.floor(num)}</p>`
+        document.body.innerHTML += `<p>O seu número arredondado para cima é ${Math.ceil(num)}</p>`
+        document.body.innerHTML += `<p>O seu número com duas casas decimais é ${num.toFixed(2)}</p>`
+    </script>
+    
+</body>
+</html>
