@@ -4,6 +4,8 @@
 
 :root {
     --primary-color: rgba(91, 91, 235, 0.836);
+    --negative-res: rgba(255, 136, 0, 0.685);
+    --positive-res: rgba(0, 255, 34, 0.596);
 }
 
 * {
@@ -109,4 +111,8 @@ legend {
 #res {
     width: 100%;
     height: 30px;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 5px 10px 5px 0px;
+    display: flex;
 }
