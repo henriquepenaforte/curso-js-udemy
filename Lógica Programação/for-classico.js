@@ -6,3 +6,4 @@ for (let c = 0; c <=10; c++) {
 const frutas = ['maçâ', 'pera', 'uva', 'banana', 'limao', 'laranja'];
 for (let i = 0; i < frutas.length; i++) {
     console.log(`índice ${i}, ${frutas[i]}`);
+}
