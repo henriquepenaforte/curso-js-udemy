@@ -5,9 +5,31 @@ const elementos = [
     {tag: 'section', texto: 'Frase 4'},
 ];
 
-let [P, Div, Footer, Section] = elementos;
+let container = document.querySelector('.container');
+let div = document.createElement('div');
+
+for (let i = 0; i < elementos.length; i++) {
+    let { tag , texto} = elementos[i];
+    let tagCriada = document.createElement(tag);
+    tagCriada.innerText = texto;
+    div.appendChild(tagCriada);
+}
+
+container.appendChild(div);
 
 
+
+
+
+
+
+
+
+
+
+
+
+/*
 let container = document.querySelector('.container');
 let div = document.createElement('div');
 
@@ -19,3 +41,4 @@ for (let i = 0; i < elementos.length; i++) {
 }
 
 container.appendChild(div);
+*/
