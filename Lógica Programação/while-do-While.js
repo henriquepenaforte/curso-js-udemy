@@ -26,10 +26,17 @@ while (rand !== 10) {
     rand = random(min,max);
     vezes++
 }
-console.log(vezes);
+console.log(vezes); //retorna quantas vezes foram necessárias para a função random retornar 10
 
-// a diferen
+// a diferença entre while e do while é que a primeira a condicional é testada no início enquanto na segunda a condicional é testada apenas no final do bloco de repetição;
+let VEZES = 0;
 
+do {
+    rand = random(min, max)
+    VEZES++
+} while (rand !== 10)
+
+console.log(VEZES); //retorna quantas vezes foram necessárias para a função random retornar 10
 
 
 
