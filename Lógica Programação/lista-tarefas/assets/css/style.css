@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: rgb(245, 207, 213)
 }
 
 header {
