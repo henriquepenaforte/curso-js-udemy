@@ -1,4 +1,6 @@
 //Filter -> sempre retorna um array com a mesma quantidade de elementos ou menos.
+//o filter aceita 3 parametros, mas geralmente só se usa o primeiro:
+//arr.filter(function(valor, indice, array){})
 
 //retorne os numeros maiores que 10:
 const numeros = [5, 60, 80, 1, 2, 30, 11, 10, 999, 54, 5, 3];
