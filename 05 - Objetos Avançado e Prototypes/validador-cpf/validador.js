@@ -20,7 +20,7 @@ ao concatenar os 9 primeiros dígitos com os dois gerados pelo cálculo, se o re
                 705.484.450-52 === 705.484.450-52
 */
 
-let cpf = '985.781.183-57';
+let cpf = '705.484.450-52';
 
 let cpf9 = cpf.slice(0,11).split('.').join('').split(''); //array com os 9 numeros separados 
 
@@ -56,3 +56,49 @@ function validador () {
     return conc.join('') === cpfComparacao
 }
 console.log(validador())
+
+
+/* function ValidadorCpf(cpf) {
+    this.cpf = cpf;
+    this.cpf9 = this.cpf.slice(0,11).split('.').join('').split('');
+    this.primeiroDigito();
+    this.segundoDigito();  
+    this.validador();
+}
+
+ValidadorCpf.prototype.primeiroDigito = function () {
+    let multiplicador = 10;
+    let acumulador = 0;
+    for (let i of this.cpf9) {
+        acumulador += i*multiplicador;
+        multiplicador-- 
+    };
+    let res = 11 - (acumulador % 11);
+    return res
+}
+
+ValidadorCpf.prototype.segundoDigito = function () {
+    let cpfTemp = [...this.cpf9];
+    cpfTemp.push(primeiroDigito());
+    let multiplicador = 11;
+    let acumulador = 0;
+    for (let i of cpfTemp) {
+        acumulador += i*multiplicador;
+        multiplicador-- 
+    };
+    let res = 11 - (acumulador % 11);
+    return res
+}
+
+ValidadorCpf.prototype.validador = function () {
+    let res1 = primeiroDigito();
+    let res2 = segundoDigito();
+    let cpfComparacao = cpf.replace(/\D+/g, '');
+    let conc = [...cpf9, ...[res1], ...[res2]];
+    return conc.join('') === cpfComparacao
+}
+
+let cpf = '070.987.720-03';
+let cpfValido = new ValidadorCpf(cpf);
+console.log(cpfValido); */
+
