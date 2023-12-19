@@ -20,7 +20,7 @@ ao concatenar os 9 primeiros dígitos com os dois gerados pelo cálculo, se o re
                 705.484.450-52 === 705.484.450-52
 */
 
-let cpf = '705.484.450-52';
+let cpf = '070.987.720-03';
 
 let cpf9 = cpf.slice(0,11).split('.').join('').split(''); //array com os 9 numeros separados 
 
@@ -32,6 +32,7 @@ function primeiroDigito () {
         multiplicador-- 
     };
     let res = 11 - (acumulador % 11);
+    if (res > 9) return 0;
     return res
 }
 
@@ -45,10 +46,13 @@ function segundoDigito() {
         multiplicador-- 
     };
     let res = 11 - (acumulador % 11);
+    if (res > 9) return 0;
     return res
 }
 
 function validador () {
+    if (typeof cpf === 'undefined') return false;
+    if (cpf9.length !== 9) return false;
     let res1 = primeiroDigito();
     let res2 = segundoDigito();
     let cpfComparacao = cpf.replace(/\D+/g, '');
