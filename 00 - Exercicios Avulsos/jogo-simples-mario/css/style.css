@@ -30,6 +30,14 @@ main h1 {
     font-size: 4.5em;
     text-align: center;
     padding-top: 250px;
+    display: none;
+}
+
+main p {
+    font-size: 2em;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
 }
 
 header {
