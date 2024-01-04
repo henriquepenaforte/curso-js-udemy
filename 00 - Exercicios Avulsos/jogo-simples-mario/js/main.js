@@ -22,10 +22,8 @@ function jump (e) {
     }, 500);
 }
 
-function loop () { 
-        clearInterval(intervalo);
-        intervalo = setInterval(()=> {
-        console.log('a')
+const loop = () => { 
+        setInterval(()=> {
         const pipePosition = pipe.offsetLeft;
         const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
         
