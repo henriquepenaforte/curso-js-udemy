@@ -6,12 +6,15 @@ let pipeStyleDefault = pipe.getAttribute('style');
 
 let score = 0;
 let maxScore = 0;
+let intervalo;
+let vivo = true;
 
 document.addEventListener('keydown', jump);
 document.addEventListener('keydown', restart);
 
 
-function jump () {
+function jump (e) {
+    if (e.keyCode !== 32) return;
     mario.classList.add('jump');
     
     setTimeout(() => {
@@ -19,7 +22,9 @@ function jump () {
     }, 500);
 }
 
-const loop = setInterval(()=> {
+function loop () { 
+        clearInterval(intervalo);
+        intervalo = setInterval(()=> {
         console.log('a')
         const pipePosition = pipe.offsetLeft;
         const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
@@ -35,17 +40,23 @@ const loop = setInterval(()=> {
             mario.style.width = '75px'
             mario.style.marginLeft = '50px';
 
+            vivo = false;
             clearInterval(loop);
-            clearInterval(pountuacao);
+            clearInterval(intervalo);
+            clearInterval(pontuacao);
             gameOver();
             pontuacaoMax();
         }
     },10)
-    
-const pountuacao = setInterval(() => {
-    score++;
-    document.querySelector('#score').innerHTML = score;
-},1500)
+}    
+
+function pontuacao () {
+    intervalo = setInterval(() => {
+        console.log('interval pont')
+        score++;
+        document.querySelector('#score').innerHTML = score;
+    },1500)
+} 
 
 function pontuacaoMax() {
     if (score > maxScore) {
@@ -61,14 +72,23 @@ function gameOver () {
 
 function restart (e) {
     if(e.keyCode === 82) {
-        pountuacao;
-        mario.src = './img/mario.gif'
-        mario.style = marioStyleDefault;
-        pipe.style = pipeStyleDefault;
-       
-        document.querySelector('main h1').style.display = 'none';
-        document.querySelector('main p').style.display = 'none';
-        
-        loop()
+        if (vivo) { 
+            return;
+        } else {
+            score = 0;
+            document.querySelector('#score').innerHTML = score;
+            pontuacao();
+            mario.src = './img/mario.gif'
+            mario.style = marioStyleDefault;
+            pipe.style = pipeStyleDefault;
+           
+            document.querySelector('main h1').style.display = 'none';
+            document.querySelector('main p').style.display = 'none';
+            
+            loop();
+        }
     }
 }
+
+document.addEventListener('load', loop());
+document.addEventListener('load', pontuacao());
