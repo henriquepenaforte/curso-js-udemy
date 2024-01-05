@@ -1,5 +1,6 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const btnMute = document.querySelector('.btn-mute');
 
 let marioStyleDefault = mario.getAttribute('style');
 let pipeStyleDefault = pipe.getAttribute('style');
@@ -8,10 +9,11 @@ let score = 0;
 let maxScore = 0;
 let intervalo;
 let vivo = true;
+let mutado = false;
 
 document.addEventListener('keydown', jump);
 document.addEventListener('keydown', restart);
-
+btnMute.addEventListener('click', () => {mutado ? mutado = false : mutado = true})
 
 function jump (e) {
     if (e.keyCode !== 32) return;
@@ -24,6 +26,7 @@ function jump (e) {
 }
 
 function jumpSound () {
+    if (mutado) return;
     const somPulo = new Audio('./sounds/jump.wav')
     return somPulo.play();
 }

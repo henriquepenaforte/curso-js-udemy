@@ -84,11 +84,6 @@ main {
     margin: auto;
     position: relative;
     overflow: hidden;
-    /* background-image: url(../img/background.jpg);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    animation: pipe-animation 1.5s infinite linear;  */  
 }
 
 .clouds {
@@ -183,4 +178,27 @@ main {
     }
 }
 
+footer {
+    margin-top: 90px;
+    width: 100vw;
+    height: 400px;
+    position: absolute;
+    background-color: black;
+}
 
+footer p {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+.btn-mute {
+    margin-top: 10px;
+}
+
+.btn-mute:hover {
+    color: red;
+    transition: 0.2s;
+    font-size: 1.3em;
+}
