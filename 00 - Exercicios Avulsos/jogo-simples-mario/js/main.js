@@ -16,10 +16,16 @@ document.addEventListener('keydown', restart);
 function jump (e) {
     if (e.keyCode !== 32) return;
     mario.classList.add('jump');
-    
+    if (vivo) jumpSound();
+
     setTimeout(() => {
         mario.classList.remove('jump')
     }, 500);
+}
+
+function jumpSound () {
+    const somPulo = new Audio('./sounds/jump.wav')
+    return somPulo.play();
 }
 
 const loop = () => { 
@@ -82,7 +88,7 @@ function restart (e) {
            
             document.querySelector('main h1').style.display = 'none';
             document.querySelector('main p').style.display = 'none';
-            
+            vivo = true;
             loop();
         }
     }

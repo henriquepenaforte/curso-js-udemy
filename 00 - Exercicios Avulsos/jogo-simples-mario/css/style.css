@@ -19,12 +19,24 @@ section {
     display: flex;
     position: absolute;
     height: 87.5vh;
-    /* animation: pipe-animation 10s infinite linear; */
 }
 
 .background {
+    position: relative;
     margin-left: -55px;
+    /* animation: background-animation 10s infinite linear; */
 }
+
+/* @keyframes background-animation {
+    0% {
+        position: 50% 0;
+    }
+    100% {
+        position: 50% -1000px;
+    }
+} */
+
+
 
 main h1 {
     font-size: 4.5em;
