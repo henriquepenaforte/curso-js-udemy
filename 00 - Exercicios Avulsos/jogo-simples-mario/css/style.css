@@ -15,28 +15,37 @@ body {
     overflow: hidden;
 }
 
-section {
-    display: flex;
+article {
+    flex-wrap: nowrap;
+    overflow: hidden;
     position: absolute;
-    height: 87.5vh;
 }
+
+.section-1 {
+    display: inline-flex;
+    position: relative;
+    height: 87.5vh;
+    width: max-content;
+    animation: background-animation 7s infinite linear;
+}   
+
+.section-2 {
+    display: inline-flex;
+    position: relative;
+    height: 87.5vh;
+    animation: background-animation 7s infinite linear;
+}   
 
 .background {
     position: relative;
     margin-left: -55px;
-    /* animation: background-animation 10s infinite linear; */
 }
 
-/* @keyframes background-animation {
-    0% {
-        position: 50% 0;
+@keyframes background-animation {
+    to {
+        transform: translateX(-50%);
     }
-    100% {
-        position: 50% -1000px;
-    }
-} */
-
-
+}
 
 main h1 {
     font-size: 4.5em;
