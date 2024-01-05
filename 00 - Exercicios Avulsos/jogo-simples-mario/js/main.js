@@ -102,6 +102,8 @@ function restart (e) {
             document.querySelector('main p').style.display = 'none';
             vivo = true;
             background.style.animationPlayState = 'running'
+            dificuldade();
+            dificulade2();
             loop();
         }
     }
@@ -109,3 +111,21 @@ function restart (e) {
 
 document.addEventListener('load', loop());
 document.addEventListener('load', pontuacao());
+
+//teste aumento dificulade
+
+const dificuldade = () => {
+    setTimeout(()=> {
+        pipe.style.right = '0px';
+        pipe.style.animationDuration = '1.5s'
+    },20000)
+}
+dificuldade();
+
+const dificulade2 = () => {
+    setTimeout(()=> {
+        pipe.style = pipeStyleDefault;
+        pipe.style.animationDuration = '1s'
+    },40000)
+}
+dificulade2();
