@@ -29,7 +29,14 @@ function jump (e) {
 function jumpSound () {
     if (mutado) return;
     const somPulo = new Audio('./sounds/jump.wav')
+    somPulo.volume = 0.1
     return somPulo.play();
+}
+
+function deathSound () {
+    if (mutado) return;
+    const somMorte = new Audio('./sounds/death-sound.wav')
+    return somMorte.play();
 }
 
 const loop = () => { 
@@ -61,7 +68,6 @@ const loop = () => {
 
 function pontuacao () {
     intervalo = setInterval(() => {
-        console.log('interval pont')
         score++;
         document.querySelector('#score').innerHTML = score;
     },1500)
@@ -87,10 +93,11 @@ function restart (e) {
             score = 0;
             document.querySelector('#score').innerHTML = score;
             pontuacao();
+            deathSound();
             mario.src = './img/mario.gif'
             mario.style = marioStyleDefault;
             pipe.style = pipeStyleDefault;
-           
+            
             document.querySelector('main h1').style.display = 'none';
             document.querySelector('main p').style.display = 'none';
             vivo = true;
