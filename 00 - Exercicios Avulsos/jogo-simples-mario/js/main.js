@@ -115,6 +115,7 @@ document.addEventListener('load', pontuacao());
 //teste aumento dificulade
 
 const dificuldade = () => {
+    if (!vivo) return;
     setTimeout(()=> {
         pipe.style.right = '0px';
         pipe.style.animationDuration = '1.5s'
@@ -123,6 +124,7 @@ const dificuldade = () => {
 dificuldade();
 
 const dificulade2 = () => {
+    if (!vivo) return;
     setTimeout(()=> {
         pipe.style = pipeStyleDefault;
         pipe.style.animationDuration = '1s'
