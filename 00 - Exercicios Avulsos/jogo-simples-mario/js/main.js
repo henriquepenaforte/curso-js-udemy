@@ -1,6 +1,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const btnMute = document.querySelector('.btn-mute');
+const background = document.querySelector('section');
 
 let marioStyleDefault = mario.getAttribute('style');
 let pipeStyleDefault = pipe.getAttribute('style');
@@ -35,7 +36,7 @@ const loop = () => {
         setInterval(()=> {
         const pipePosition = pipe.offsetLeft;
         const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
-        
+
         if (pipePosition <= 120 && marioPosition < 80 && pipePosition > 0) {
             pipe.style.animation = 'none';
             pipe.style.left = `${pipePosition}px`;
@@ -48,6 +49,7 @@ const loop = () => {
             mario.style.marginLeft = '50px';
 
             vivo = false;
+            background.style.animationPlayState = 'paused';
             clearInterval(loop);
             clearInterval(intervalo);
             clearInterval(pontuacao);
@@ -92,6 +94,7 @@ function restart (e) {
             document.querySelector('main h1').style.display = 'none';
             document.querySelector('main p').style.display = 'none';
             vivo = true;
+            background.style.animationPlayState = 'running'
             loop();
         }
     }

@@ -21,20 +21,23 @@ article {
     position: absolute;
 }
 
-.section-1 {
+section {
     display: inline-flex;
     position: relative;
     height: 87.5vh;
     width: max-content;
-    animation: background-animation 7s infinite linear;
 }   
 
-.section-2 {
+/* .section-2 {
     display: inline-flex;
     position: relative;
     height: 87.5vh;
+    
+}    */
+
+.background-animation {
     animation: background-animation 7s infinite linear;
-}   
+}
 
 .background {
     position: relative;
