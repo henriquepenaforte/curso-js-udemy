@@ -83,6 +83,7 @@ function pontuacaoMax() {
 function gameOver () {
     document.querySelector('main h1').style.display = 'block';
     document.querySelector('main p').style.display = 'block';
+    clearTimeout(dificuldade, dificulade2)
 }
 
 function restart (e) {
