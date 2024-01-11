@@ -17,7 +17,7 @@ function esperaAi (msg, tempo) {
     });
 }
 
-/* esperaAi('fase 1', aleatorio())
+esperaAi('fase 1', aleatorio())
     .then((valor) => {
         console.log(valor)
         return esperaAi('fase 2', aleatorio())
@@ -34,7 +34,7 @@ function esperaAi (msg, tempo) {
     })
     .catch(erro => {
         console.log(erro)
-    }); */
+    });
 
 async function executa () {
     try {
