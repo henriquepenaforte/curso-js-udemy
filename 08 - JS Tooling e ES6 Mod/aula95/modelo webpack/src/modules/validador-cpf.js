@@ -1,6 +1,6 @@
 // 705.484.450-52     070.987.720-03
 
-class ValidadorCPF {
+export default class ValidadorCPF {
     constructor(cpfEnviado) {
         this.cpf = cpfEnviado
     }
@@ -40,3 +40,4 @@ class ValidadorCPF {
 
 const cpf = new ValidadorCPF('705.484.450-52');
 console.log(cpf.valida());
+console.log('AOOOOO POTENCIAA')
