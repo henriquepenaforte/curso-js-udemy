@@ -1,0 +1,20 @@
+<% Controle de fluxo (if,for...)%>
+<%= Imprime escapando caracteres(sem ativar as tags, só mostra) %>
+<%- Imprime sem escapar caracteres(executa as tags) %>
+<%# Comentário %>
+<%- include('CAMINHO/ARQUIVO')
+
+
+<% if (algumacoisa) { %>
+    <% exibe alguma coisa %>
+<% } else { %>
+    <% exibe outra coisa %>
+<% } %>
+
+
+Variaveis locais podem ser enviadas pelo controller no res.render('index', {
+    nomevariavel: valorvariavel,
+    outravariavel: valorvariavel
+})
+
+tambem podem ser enviadas no middleware no app.use

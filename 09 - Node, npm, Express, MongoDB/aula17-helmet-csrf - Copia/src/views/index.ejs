@@ -1,0 +1,29 @@
+<%- include('includes/head'); %>
+<header>
+    <h1>Injetando Views</h1>
+    <h1>
+        <%= titulo%> <!--injetado pelo controller/ejs sem 'ativar' as tags presentes--><br>
+        <%- titulo%> <!--injetado pelo controller/ejs ativando as tags, ou seja, executa o html/js--> <br>
+
+        <% numeros.forEach(num => { %>
+            <%= num %>
+        <% }); %>
+    </h1>
+</header>
+<main>
+    <h1>Formulário:</h1>
+
+    <form action="/" id="form" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <fieldset>
+            <legend>Formulário Teste</legend>
+
+            <label for="input-teste-1">Label Teste #1</label>
+            <input type="text" id="input-teste-1" name="nomeCliente"> <br>
+
+            <button>Enviar</button>
+        </fieldset>
+    </form>
+</main>
+
+<%-include('includes/footer') %>
