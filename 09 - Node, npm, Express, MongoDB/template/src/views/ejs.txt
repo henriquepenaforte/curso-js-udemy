@@ -1,3 +1,5 @@
+//Arquivo só para mostrar as formas básicas de se usar o EJS:
+
 <% Controle de fluxo (if,for...)%>
 <%= Imprime escapando caracteres(sem ativar as tags, só mostra) %>
 <%- Imprime sem escapar caracteres(executa as tags) %>

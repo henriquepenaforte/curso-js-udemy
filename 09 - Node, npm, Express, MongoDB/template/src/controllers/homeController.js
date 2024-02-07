@@ -1,4 +1,7 @@
+//O trabalho do controller é decidir qual view e qual model irá ser utilizado para cada rota 
+
 exports.paginaInicial = (req, res) => {
+    //exemplos de flash messages:
     /* req.flash('info', 'Olá mundo!');
     req.flash('error', 'dsdasdasads');
     req.flash('success', 'lero lero lero'); */
