@@ -20,9 +20,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `@charset "utf-8";
+___CSS_LOADER_EXPORT___.push([module.id, `/* @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
 
 :root {
@@ -106,7 +106,13 @@ fieldset {
 
 legend {
     font-weight: bold;
-}`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAAA,gBAAgB;;;AAIhB;IACI,yCAAyC;AAC7C;;AAEA;IACI,UAAU;IACV,WAAW;IACX,YAAY;IACZ,sBAAsB;IACtB,oCAAoC;AACxC;;AAEA;IACI,sCAAsC;AAC1C;;AAEA;IACI,kBAAkB;IAClB,aAAa;IACb,YAAY;IACZ,8BAA8B;IAC9B,gBAAgB;IAChB,iBAAiB;AACrB;;AAEA;IACI,uBAAuB;IACvB,YAAY;IACZ,YAAY;IACZ,4BAA4B;IAC5B,kBAAkB;IAClB,4CAA4C;AAChD;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,mBAAmB;IACnB,iBAAiB;IACjB,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB,WAAW;AACf;;AAEA;IACI,YAAY;IACZ,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,uCAAuC;AAC3C;;AAEA;IACI,YAAY;IACZ,gBAAgB;IAChB,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,sCAAsC;IACtC,YAAY;IACZ,8BAA8B;IAC9B,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["@charset \"utf-8\";\r\n@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');\r\n\r\n\r\n:root {\r\n    --primary-color: rgba(91, 91, 235, 0.836);\r\n}\r\n\r\n* {\r\n    outline: 0;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\n\r\nbody {\r\n    background-color: var(--primary-color);\r\n}\r\n\r\nheader {\r\n    text-align: center;\r\n    padding: 10px;\r\n    color: white;\r\n    text-shadow: 1px 1px 1px black;\r\n    font-size: 1.3em;\r\n    font-weight: bold;\r\n}\r\n\r\nmain {\r\n    background-color: white;\r\n    width: 800px;\r\n    margin: auto;\r\n    padding: 10px 20px 10px 20px;\r\n    border-radius: 8px;\r\n    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.527);\r\n}\r\n\r\nmain h1 {\r\n    padding: 5px;\r\n}\r\n\r\nmain p {\r\n    text-align: justify;\r\n    text-indent: 30px;\r\n    line-height: 1.3em;\r\n}\r\n\r\nlabel, input, button {\r\n    margin: 8px 0px 8px 0px;\r\n    width: 100%;\r\n}\r\n\r\ninput {\r\n    height: 30px;\r\n    font-size: 1.3em;\r\n    padding: 5px;\r\n}\r\n\r\ninput:focus {\r\n    outline: 1px solid var(--primary-color);\r\n}\r\n\r\nbutton {\r\n    height: 30px;\r\n    font-size: 1.2em;\r\n    font-weight: 700;\r\n    margin-top: 20px;\r\n}\r\n\r\nbutton:hover {\r\n    background-color: var(--primary-color);\r\n    color: white;\r\n    text-shadow: 1px 1px 1px black;\r\n    transition: 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\nfieldset {\r\n    padding: 10px;\r\n    margin: 10px 0px 10px 0px;\r\n}\r\n\r\nlegend {\r\n    font-weight: bold;\r\n}"],"sourceRoot":""}]);
+}
+
+footer {
+    text-align: center;
+    background-color: white;
+    font-weight: bolder;
+} */`, "",{"version":3,"sources":["webpack://./frontend/assets/css/style.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;GA2FG","sourcesContent":["/* @charset \"utf-8\";\r\n@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');\r\n\r\n\r\n:root {\r\n    --primary-color: rgba(91, 91, 235, 0.836);\r\n}\r\n\r\n* {\r\n    outline: 0;\r\n    margin: 0px;\r\n    padding: 0px;\r\n    box-sizing: border-box;\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\n\r\nbody {\r\n    background-color: var(--primary-color);\r\n}\r\n\r\nheader {\r\n    text-align: center;\r\n    padding: 10px;\r\n    color: white;\r\n    text-shadow: 1px 1px 1px black;\r\n    font-size: 1.3em;\r\n    font-weight: bold;\r\n}\r\n\r\nmain {\r\n    background-color: white;\r\n    width: 800px;\r\n    margin: auto;\r\n    padding: 10px 20px 10px 20px;\r\n    border-radius: 8px;\r\n    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.527);\r\n}\r\n\r\nmain h1 {\r\n    padding: 5px;\r\n}\r\n\r\nmain p {\r\n    text-align: justify;\r\n    text-indent: 30px;\r\n    line-height: 1.3em;\r\n}\r\n\r\nlabel, input, button {\r\n    margin: 8px 0px 8px 0px;\r\n    width: 100%;\r\n}\r\n\r\ninput {\r\n    height: 30px;\r\n    font-size: 1.3em;\r\n    padding: 5px;\r\n}\r\n\r\ninput:focus {\r\n    outline: 1px solid var(--primary-color);\r\n}\r\n\r\nbutton {\r\n    height: 30px;\r\n    font-size: 1.2em;\r\n    font-weight: 700;\r\n    margin-top: 20px;\r\n}\r\n\r\nbutton:hover {\r\n    background-color: var(--primary-color);\r\n    color: white;\r\n    text-shadow: 1px 1px 1px black;\r\n    transition: 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\nfieldset {\r\n    padding: 10px;\r\n    margin: 10px 0px 10px 0px;\r\n}\r\n\r\nlegend {\r\n    font-weight: bold;\r\n}\r\n\r\nfooter {\r\n    text-align: center;\r\n    background-color: white;\r\n    font-weight: bolder;\r\n} */"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

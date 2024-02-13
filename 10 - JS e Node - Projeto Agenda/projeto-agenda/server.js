@@ -25,32 +25,27 @@ const routes = require('./routes');
 const path = require('path'); //facilita o trabalho com caminhos absolutos que servem de parâmetro para diversas funções e importações;
 
 
-//Middlewares são cadeias de códigos que são executados antes ou depois de responder o cliente (como um middleware que verifica se o usuário está logado antes de acessar outra parte da página):
-const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware'); //importando os middlewares de outro arquivo
-const { outroMiddleware } = require('./src/middlewares/middleware');
-
-
 //Configurações de segurança:
 const helmet = require('helmet'); //recomendação do express para segurança 
 const csrf = require('csurf'); //cria tokens de segurança, que são basicamente id's únicos para cada acesso, que servem de validação para envio e leitura da página, evitando acessos indevidos de solicitações maliciosas, evitando que sites externos 'postem' ou modifique o site desenvolvido.
 
+//Middlewares são cadeias de códigos que são executados antes ou depois de responder o cliente (como um middleware que verifica se o usuário está logado antes de acessar outra parte da página):
+const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware'); //importando os middlewares de outro arquivo
+const { outroMiddleware } = require('./src/middlewares/middleware');
+
+app.use(helmet());
 
 //'Executando' as configurações invocadas anteriormente:
 app.use(express.urlencoded({ extended: true })); //permite que formulários sejam postados dentro da aplicação
 app.use(express.json()); //importam as informações de json para a aplicação
 app.use(express.static(path.resolve(__dirname, 'public'))); //permite que a aplicação use e acesse recursos de arquivos estáticos públicos, como imagens, css's e etc
-app.use(middlewareGlobal);
-app.use(outroMiddleware);
-app.use(checkCsrfError);
-app.use(csrfMiddleware);
-app.use(helmet());
-app.use(csrf());
 
 //configuração da sessão (local de salvamento, se o salvamento irá ser reescrito, tempo de duração de um cookie na base de dados e no dispositivo do usuário);
 const sessionOptions = session({
     secret: 'asdasdahguikhuisdsa',
     store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING}),
     resave: false,
+    saveUninitialized: false,
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7,
         httpOnly: true
@@ -66,6 +61,11 @@ app.set('views', './src/views') //passando o caminho relativo
 app.set('view engine', 'ejs'); //configurando a engine de renderização, no caso, o pacote EJS instalado pelo npm;
 
 //Executando as rotas configuradas:
+app.use(csrf());
+app.use(middlewareGlobal);
+app.use(outroMiddleware);
+app.use(checkCsrfError);
+app.use(csrfMiddleware);
 app.use(routes);
 
 
