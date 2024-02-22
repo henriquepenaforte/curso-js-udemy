@@ -9,6 +9,8 @@ const homeController = require('./src/controllers/homeController');
 const loginController = require('./src/controllers/loginController');
 const contatoController = require('./src/controllers/contatoController');
 
+const { loginRequired } = require('./src/middlewares/middleware')
+
 route.get('/', homeController.index); //poderia ser '/index', mas só a barra já reconhece a página inicial (index);;
 
 // Rotas de login
@@ -18,6 +20,9 @@ route.post('/login/login', loginController.login);
 route.get('/login/logout', loginController.logout);
 
 // Rotas de contato
-route.get('/contato', contatoController.paginaInicial)
+route.get('/contato/index', loginRequired, contatoController.index);
+route.post('/contato/register', loginRequired, contatoController.register);
+route.get('/contato/index/:id', loginRequired, contatoController.editIndex);
+route.post('/contato/edit/:id', loginRequired, contatoController.edit);
 
 module.exports = route;
