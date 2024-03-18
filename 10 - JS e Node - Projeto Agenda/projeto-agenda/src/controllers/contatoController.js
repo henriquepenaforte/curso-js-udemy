@@ -6,7 +6,7 @@ exports.index = (req, res) => {
     });
 };
 
-exports.register = async (req, res) => {
+exports.register = async function (req, res) {
     try {
         const contato = new Contato(req.body);
         await contato.register();
@@ -17,7 +17,7 @@ exports.register = async (req, res) => {
         }
 
         req.flash('success', 'Contato registrado com sucesso!');
-        req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`));
+        req.session.save(() => res.redirect(`back`));
 
     } catch(e) {
         console.log(e);
@@ -25,7 +25,7 @@ exports.register = async (req, res) => {
     }
 }
 
-exports.editIndex = async (req, res) => {
+exports.editIndex = async function (req, res) {
     if (!req.params.id) return res.render('404');
     const contatoInstanciado = new Contato(req.body);
     const contato = await contatoInstanciado.buscaPorId(req.params.id)
@@ -33,7 +33,7 @@ exports.editIndex = async (req, res) => {
     res.render('contato', { contato });
 }
 
-exports.edit = async (req, res) => {
+exports.edit = async function (req, res) {
    try {
         if (!req.params.id) return res.render('404');
         const contato = new Contato(req.body);
@@ -46,10 +46,22 @@ exports.edit = async (req, res) => {
         }
 
         req.flash('success', 'Contato editado com sucesso!');
-        req.session.save(() => res.redirect(`/contato/index/${contato.contato.id}`));
+        req.session.save(() => res.redirect(`/contato/index/${contato.contato._id}`));
     } catch (e) {
         console.log(e);
         res.render('404');
     }
 
+}
+
+exports.delete = async (req, res) => {
+    if (!req.params.id) return res.render('404');
+    const contatoInstanciado = new Contato(req.body);
+
+    const contato = await contatoInstanciado.delete(req.params.id)
+    if (!contato) return res.render('404');
+
+    req.flash('success', 'Contato apagado com sucesso!');
+    req.session.save(() => res.redirect('back'));
+    return;
 }
